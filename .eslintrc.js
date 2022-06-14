@@ -16,7 +16,8 @@ const config = {
   ],
   rules: {
     'space-before-function-paren': 'off',
-    quotes: 0
+    quotes: 0,
+    indent: 0
   }
 }
 
