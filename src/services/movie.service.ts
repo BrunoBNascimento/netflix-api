@@ -9,6 +9,13 @@ class MovieService {
     this.movieRepository = AppDataSource.getRepository(Movie)
   }
 
+  /**
+   * Retorna todos os filmes
+   *
+   * @returns Retorna todos os filmes
+   *
+   * @deprecated
+   */
   list() {
     return this.movieRepository.find()
   }
