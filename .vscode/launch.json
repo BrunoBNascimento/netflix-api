@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "npm run start:dev",
+      "name": "Start Dev",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "Run and Debug",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "args": ["${workspaceRoot}/index.ts"]
+    }
+  ]
+}
