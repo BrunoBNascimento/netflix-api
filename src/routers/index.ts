@@ -1,10 +1,11 @@
 import express, { Application } from "express"
 import morgan from "morgan"
-import MoviesRouter from "./movies.router"
+import ShowsRouter from "./shows.router"
 
 const routes = [
-  MoviesRouter
+  ShowsRouter
 ]
+
 const jsonParserMiddleware = express.json()
 
 function startRoutes(app: Application) {

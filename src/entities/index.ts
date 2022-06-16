@@ -1,1 +1,1 @@
-export { default as Movie } from "./movie.entity"
+export { default as Show } from "./show.entity"

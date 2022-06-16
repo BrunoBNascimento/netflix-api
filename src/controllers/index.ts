@@ -1,1 +1,1 @@
-export { default as MovieController } from "./movie.controller"
+export { default as ShowController } from "./show.controller"

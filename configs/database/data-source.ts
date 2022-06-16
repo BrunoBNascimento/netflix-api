@@ -1,5 +1,4 @@
 import { DataSource } from "typeorm"
-import Movie from "../../src/entities/movie.entity"
 
 export const AppDataSource = new DataSource({
   type: "mysql",
@@ -8,7 +7,7 @@ export const AppDataSource = new DataSource({
   username: "root",
   password: "abcbanana",
   database: "netflix",
-  entities: [Movie],
+  entities: ["src/entities/*.entity.ts"],
   synchronize: true
 })
 

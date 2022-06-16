@@ -16,6 +16,8 @@ const config = {
   ],
   rules: {
     'space-before-function-paren': 'off',
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     quotes: 0,
     indent: 0,
     semi: 0
