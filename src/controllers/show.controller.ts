@@ -8,6 +8,7 @@ const showService = new ShowService()
 class ShowController {
   public static async list(request: Request, response: CustomResponse) {
     try {
+      console.log(request.user)
       const shows = await showService.list()
       response.json(shows)
     } catch (e) {

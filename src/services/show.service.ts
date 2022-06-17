@@ -21,8 +21,8 @@ class ShowService {
    *
    * @beta
    */
-  list() {
-    return this.showRepository.find();
+  async list() {
+    return this.showRepository.find({ relations: ["episodes"] })
   }
 
   /**

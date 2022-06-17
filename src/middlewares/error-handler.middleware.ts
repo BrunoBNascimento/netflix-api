@@ -12,6 +12,7 @@ export const errorHandlerMiddleware = (request: Request, response: CustomRespons
         .status(e.status)
         .send({ error: true, message: e.message, details: e })
     } else {
+      console.error(e)
       response.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ error: true })
     }
   }
