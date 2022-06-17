@@ -1,10 +1,14 @@
 import express, { Application } from "express"
 import morgan from "morgan"
 import { errorHandlerMiddleware } from "../middlewares/error-handler.middleware"
+import AuthRouter from "./auth.router"
 import ShowsRouter from "./shows.router"
+import UserRouter from "./user.router"
 
 const routes = [
-  ShowsRouter
+  ShowsRouter,
+  AuthRouter,
+  UserRouter
 ]
 
 const jsonParserMiddleware = express.json()
