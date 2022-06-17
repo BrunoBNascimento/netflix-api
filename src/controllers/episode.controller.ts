@@ -10,7 +10,6 @@ class EpisodeController {
     try {
       const { body } = request;
 
-      // CHAMAR SERVICE
       const createdEpisode = await episodeService.create(body)
 
       response
