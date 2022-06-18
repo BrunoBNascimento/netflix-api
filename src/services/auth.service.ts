@@ -14,6 +14,7 @@ class AuthService {
    */
   async login(email: string, password: string) {
     const userService = new UserService()
+    const secret = process.env.SECRET || ""
 
     const user = await userService.getUserByEmail(email)
 
@@ -31,7 +32,7 @@ class AuthService {
       sub: user.id,
       iat: Date.now(),
       email: user.email
-    }, "ABCBANANA")
+    }, secret)
 
     return {
       token

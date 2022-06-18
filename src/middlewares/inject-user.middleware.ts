@@ -14,7 +14,8 @@ const injectUser = async (request: CustomRequest, response: CustomResponse, next
   }
 
   const userRepository = AppDataSource.getRepository(User)
-  const payload = await jsonwebtoken.verify(token, "ABCBANANA")
+  const secret = process.env.SECRET || ""
+  const payload = await jsonwebtoken.verify(token, secret)
 
   if (!payload.sub) {
     throw new UnauthorizedException()
