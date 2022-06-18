@@ -1,18 +1,22 @@
 import { Repository } from "typeorm";
-import { AppDataSource } from "../../configs/database/data-source";
+import winston from "winston"
+import { AppDataSource } from "../infrastructure/database/data-source";
 import { Show } from "../entities";
 import Episode from "../entities/episode.entity"
 import BadRequestException from "../exceptions/bad-request.exception";
+import logger from "../infrastructure/logger/logger";
 
 type CreateEpisodeDTO = Omit<Episode, "id"> & { showId: number }
 
 class EpisodeService {
   private episodeRespository: Repository<Episode>;
   private showRepository: Repository<Show>;
+  private logger: winston.Logger;
 
   constructor() {
     this.episodeRespository = AppDataSource.getRepository(Episode);
     this.showRepository = AppDataSource.getRepository(Show);
+    this.logger = logger()
   }
 
   async create(createEpisode: CreateEpisodeDTO) {

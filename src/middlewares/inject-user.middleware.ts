@@ -1,6 +1,6 @@
 import { NextFunction } from "express"
 import jsonwebtoken from "jsonwebtoken"
-import { AppDataSource } from "../../configs/database/data-source"
+import { AppDataSource } from "../infrastructure/database/data-source"
 import User from "../entities/user.entity"
 import UnauthorizedException from "../exceptions/unauthorized.exception"
 import { CustomRequest } from "../interfaces/custom-request.interface"
